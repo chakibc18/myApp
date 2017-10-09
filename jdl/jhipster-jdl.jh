@@ -1,0 +1,35 @@
+
+
+entity User {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+}
+entity City {
+	/**
+	* The city attributes.
+	*/
+	name String,
+    longitude Float,
+    latitude Float,  
+}
+entity Activity {
+	/**
+	* The activity attributes.
+	*/
+	name String,
+    longitude Float,
+    latitude Float,  
+}
+
+
+relationship ManyToMany {
+	User{activities} to Activity{users}
+}
+relationship ManyToMany {
+    User{cities} to City{users}
+}
+
